@@ -41,7 +41,7 @@ const SignUpPage = ({ currentAccount, setCurrentAccount }) => {
 
     return (
         <>
-            {!currentAccount && <Button onClick={connectToWallet} sx={{ position: 'absolute', right: '10px', top: '10px' }} variant="contained">Connect Wallet</Button>}
+            {!currentAccount && <Button onClick={async () => connectToWallet()} sx={{ position: 'absolute', right: '10px', top: '10px' }} variant="contained">Connect Wallet</Button>}
             <Card sx={{ width: '50vw', margin: '40px 0', padding: '30px', display: ' flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
                 <Typography sx={{ fontSize: 16, textTransform: 'capitalize', fontWeight: 600 }} variant='overline' color="text.secondary" gutterBottom>Welcome!</Typography>
                 <Stepper address={currentAccount} />
